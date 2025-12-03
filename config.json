@@ -1,0 +1,36 @@
+{
+  "binance": {
+    "futures_rest": "https://fapi.binance.com",
+    "futures_exchange_info": "https://fapi.binance.com/fapi/v1/exchangeInfo",
+    "futures_ws_url": "wss://fstream.binance.com/stream?streams=!markPrice@arr"
+  },
+  "detection": {
+    "pump_windows": {
+      "300": 0.3,
+      "900": 2.0,
+      "1800": 3.0
+    },
+    "dump_windows": {
+      "180": -0.3,
+      "300": -0.5,
+      "900": -0.7
+    },
+    "alert_cooldown": 1800
+  },
+  "filters": {
+    "volume": {
+      "window_min": 5,
+      "lookback_min": 60,
+      "min_5m_volume_usdt": 20000,
+      "min_spike_ratio": 2.0
+    },
+    "spread": {
+      "max_spread_pct": 0.05,
+      "depth_limit": 5,
+      "min_bid_notional": 2000
+    },
+    "open_interest": {
+      "window_sec": 900
+    }
+  }
+}
